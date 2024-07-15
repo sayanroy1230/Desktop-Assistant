@@ -1,6 +1,3 @@
-# from win32com.client import Dispatch
-# speak=Dispatch("SAPI.SpVoice")
-# speak.speak("how are you")
 import pyttsx3
 import datetime
 import webbrowser
@@ -12,7 +9,6 @@ import sys
 
 engine=pyttsx3.init('sapi5')
 voices=engine.getProperty('voices')
-# print(voices[1].id)
 engine.setProperty('voice',voices[0].id)
 
 def speak(audio):
@@ -53,7 +49,6 @@ def signal_handler(sig, frame):
 signal.signal(signal.SIGINT, signal_handler)
 signal.signal(signal.SIGTERM, signal_handler)
 
-# speak("hello world")
 wishme()
 while True:
     query=takecommand().lower()
